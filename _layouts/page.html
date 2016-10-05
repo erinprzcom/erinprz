@@ -1,0 +1,24 @@
+{% include head.html %}
+
+<div class="wrapper">
+
+    <div class="container">
+
+    {% include header.html %}
+
+    <div class="pagetitle">{{page.title}}</div>
+    
+    <hr>
+
+    <div class="pagecontainer">
+    {{page.content}}
+    </div>
+
+    </div>
+
+    </div>
+    {% include footer.html %}
+
+</div>
+
+{% include googleanalytics.html %}
