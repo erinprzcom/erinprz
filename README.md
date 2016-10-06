@@ -1,10 +1,6 @@
-Yes! And...
+Erin Przekop
 ========
 
-The website of yesand.nyc - the consulting practice from Tom Critchlow.
-
-Website by Tom Critchlow
-
-tjcritchlow@gmail.com
+The personal site of Erin Przekop
 
 Thanks
