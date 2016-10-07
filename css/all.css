@@ -35,8 +35,17 @@ header{
   margin-top:100px;
 }
 
+header img{
+  width:100%;
+}
+
 .navigation{
   font-family:"josefin sans";
   font-size:30px;
   margin-top:50px;
+}
+
+.navigation a{
+  color:white;
+  
 }
