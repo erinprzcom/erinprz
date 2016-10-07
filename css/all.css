@@ -28,3 +28,9 @@ body{
   left:0;
   z-index:-1;
 }
+
+.navigation{
+  width:500px;
+  margin:auto;
+  margin-top:100px;
+}
