@@ -53,3 +53,10 @@ header img{
 color:white;
 font-weight:strong;
 }
+
+h1{
+  font-family:"josefin sans";
+  font-weight:strong;
+  font-size:34px;
+  line-height:45px;
+}
