@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hello there!
+title: Here's my story...
 ---
 
 I'm Tom Critchlow, the founder of <span class="brandsmall">Yes! and...</span> - a boutique consulting service. You can follow me on twitter here: <a href="https://twitter.com/tomcritchlow">@tomcritchlow</a>.
