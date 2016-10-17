@@ -56,7 +56,19 @@ font-weight:strong;
 
 h1{
   font-family:"josefin sans";
-  font-weight:strong;
+  font-weight:normal;
   font-size:34px;
   line-height:45px;
+}
+
+.imagegallery{
+  width:900px;
+  margin:auto;
+}
+
+.galleryimage img{
+  object-fit:cover;
+  width:300px;
+  height:300px;
+  padding:20px;
 }
