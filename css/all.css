@@ -60,7 +60,15 @@ h1{
   text-align:center;
   color:#162bf4;
   margin-top:150px;
-  margin-bottom:30px;
+}
+
+h2{
+  font-family:"josefin sans";
+  font-size:30px;
+  text-align:center;
+  color:#162bf4;
+  margin-bottom:65px;
+
 }
 
 .imagegallery{
