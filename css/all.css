@@ -59,6 +59,8 @@ h1{
   font-size:45px;
   text-align:center;
   color:#162bf4;
+  margin-top:150px;
+  margin-bottom:30px;
 }
 
 .imagegallery{
@@ -105,8 +107,10 @@ pageheader img{
   font-size:15px;
   font-family:"josefin sans";
   text-transform:uppercase;
+  color:white;
 }
 
 .pagenavigation a{
-  color:#162bf4;
+  color:white;
+  font-weight:bold;
 }
