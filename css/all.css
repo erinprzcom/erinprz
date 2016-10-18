@@ -85,3 +85,8 @@ pageheader{
 pageheader img{
   height:40px;
 }
+
+.pagenavigation{
+  float:right;
+  
+}
