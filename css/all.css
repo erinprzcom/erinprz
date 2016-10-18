@@ -88,8 +88,12 @@ pageheader img{
 
 .pagenavigation{
   float:right;
-  line-height:50px;
-  font-size:20px;
+  line-height:55px;
+  font-size:15px;
   font-family:"josefin sans";
   text-transform:uppercase;
+}
+
+.pagenavigation a{
+  color:#212121;
 }
