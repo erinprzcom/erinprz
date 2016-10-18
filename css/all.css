@@ -64,6 +64,7 @@ h1{
 .imagegallery{
   width:1200px;
   margin:auto;
+  text-align:center;
 }
 
 .imagegallery img{
@@ -76,6 +77,6 @@ h1{
 
 pageheader{
   display:block;
-  width:1200px;
-  
+  width:1120px;
+  margin:auto;
 }
