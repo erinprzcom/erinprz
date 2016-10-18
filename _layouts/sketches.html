@@ -1,0 +1,33 @@
+{% include head.html %}
+
+
+    {% include pageheader.html %}
+
+<h1>{{page.title}}</h1>
+<h2>{{page.subtitle}}</h2>
+
+{{page.content}}
+
+
+<div class="imagegallery">
+
+
+{% for image in site.static_files %}
+    {% if image.path contains 'images/sketches' %}
+        <a href="{{image.path}}" class="gallery" data-featherlight="image"><img src="{{image.path}}"/></a>
+    {% endif %}
+{% endfor %}
+
+</div>
+
+<script>
+	$('a.gallery').featherlightGallery({
+		openSpeed: 300
+	});
+    </script>
+
+    {% include footer.html %}
+
+
+
+{% include googleanalytics.html %}
