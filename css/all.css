@@ -56,9 +56,8 @@ font-weight:strong;
 
 h1{
   font-family:"josefin sans";
-  font-size:45px;
+  font-size:60px;
   text-align:center;
-  color:#162bf4;
   margin-top:150px;
 }
 
@@ -66,9 +65,12 @@ h2{
   font-family:"josefin sans";
   font-size:30px;
   text-align:center;
-  color:#162bf4;
   margin-bottom:65px;
+  font-weight:100;
+}
 
+h1, h2{
+  color:#09A5B2;
 }
 
 .imagegallery{
