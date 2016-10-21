@@ -11,12 +11,22 @@
 <div id="instafeed"></div>
 
 <script type="text/javascript">
+
+
     var feed = new Instafeed({
-        get: 'user',
+		get: 'user',
 		userId: 1213204452,
-        accessToken: '732872.66d7f05.a030f995ff624ee9b52ceefd681b942a'
-    });
-    feed.run();
+		accessToken: '732872.66d7f05.a030f995ff624ee9b52ceefd681b942a',
+		target: 'instagram',
+		resolution: 'standard_resolution',
+		after: function() {
+			var el = document.getElementById('instagram');
+			if (el.classList)
+				el.classList.add('show');
+			else
+				el.className += ' ' + 'show';
+		}
+});
 </script>
 
     {% include footer.html %}
