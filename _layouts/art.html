@@ -14,17 +14,21 @@
 
 {% for image in site.static_files %}
     {% if image.path contains 'images/art' %}
-        <a href="{{image.path}}" class="gallery" data-featherlight="image"><img src="{{image.path}}"/></a>
+        <a href="{{image.path}}" class="gallery" data-featherlight="image" alt="hello"><img src="{{image.path}}"/></a>
     {% endif %}
 {% endfor %}
-<a href="#" data-featherlight="<img src="/images/art/art-basel-miami-beach-2015-fashion-55_1024x1024.jpg"><p>Link here</p>">Open some DOM in lightbox</a>
 
 </div>
 
 <script>
 	$('a.gallery').featherlightGallery({
-		openSpeed: 300
+		openSpeed: 300,
+        afterContent: function() {
+        this.$legend = this.$legend || $('<div class="legend"/>').insertAfter(this.$content);
+        this.$legend.text(this.$currentTarget.attr('alt'));
+    }    
 	});
+
     </script>
 
     {% include footer.html %}
