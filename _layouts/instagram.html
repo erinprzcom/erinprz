@@ -1,0 +1,26 @@
+{% include head.html %}
+
+
+    {% include pageheader.html %}
+
+<h1>{{page.title}}</h1>
+<h2>{{page.subtitle}}</h2>
+
+{{page.content}}
+
+<div id="instafeed"></div>
+
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'awesome',
+        clientId: '66d7f055413f4cff858fbe09bd91858e'
+    });
+    feed.run();
+</script>
+
+    {% include footer.html %}
+
+
+
+{% include googleanalytics.html %}
