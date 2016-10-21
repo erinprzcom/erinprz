@@ -14,7 +14,8 @@
 
 {% for image in site.static_files %}
     {% if image.path contains 'images/art' %}
-        <a href="{{image.path}}" class="gallery" data-featherlight="image" alt="{{page.caption[0]}}"><img src="{{image.path}}"/></a>
+        {% assign alt = page.caption[forloop] %}
+        <a href="{{image.path}}" class="gallery" data-featherlight="image" alt="{{alt}}"><img src="{{image.path}}"/></a>
     {% endif %}
 {% endfor %}
 
