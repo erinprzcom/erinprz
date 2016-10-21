@@ -124,4 +124,5 @@ pageheader img{
 .pagenavigation a{
   color:white;
   font-weight:bold;
+  padding-left:10px;
 }
