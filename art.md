@@ -1,7 +1,7 @@
 ---
 layout: art
 title: Artpreneur
-subtitle: Founder & Creative Spirit of Fiercely Curious
+subtitle: Founder & Creative Spirit of <a href="http://www.fiercelycurious.com">Fiercely Curious</a>
 caption:
   - apple
   - banana
