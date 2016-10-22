@@ -21,7 +21,13 @@
 </div>
 
 <script>
-	$('a.gallery').featherlightGallery({
+	
+    $( ".gallery" ).each(function( index ) {
+        {% capture "number"%}index{% endcapture %}
+        $(this).attr('alt',"{{page.caption[number]}}");
+    });
+    
+    $('a.gallery').featherlightGallery({
 		openSpeed: 300,
         afterContent: function() {
         this.$legend = this.$legend || $('<div class="legend"/>').insertAfter(this.$content);
@@ -29,6 +35,8 @@
         this.$legend.text("{{page.caption[0]}}");
     }    
 	});
+
+    
 
     </script>
 
