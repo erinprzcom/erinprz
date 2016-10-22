@@ -22,10 +22,14 @@
 
 <script>
 	
+    var array = [];
+       {% for item in page.caption %}
+       array.push({{item}});
+       {% endfor %}
+
     $( ".gallery" ).each(function(index) {
-        {% capture number %}var index;{% endcapture %}
-        alert("{{number}}");
-        $(this).attr('alt',"{{page.caption[number]}}");
+        
+        $(this).attr('alt',array[index]);
     });
     
     $('a.gallery').featherlightGallery({
