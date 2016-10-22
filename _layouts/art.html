@@ -14,9 +14,6 @@
 
 {% for image in site.static_files %}
     {% if image.path contains 'images/art' %}
-        {% assign number = forloop.index0 %}
-        {% assign alt = page.caption[number] %}
-        {{number}} - {{alt}}
         <a href="{{image.path}}" class="gallery" data-featherlight="image" alt="{{alt}}"><img src="{{image.path}}"/></a>
     {% endif %}
 {% endfor %}
@@ -28,7 +25,8 @@
 		openSpeed: 300,
         afterContent: function() {
         this.$legend = this.$legend || $('<div class="legend"/>').insertAfter(this.$content);
-        this.$legend.text(this.$currentTarget.attr('alt'));
+        //this.$legend.text(this.$currentTarget.attr('alt'));
+        this.$legend.text({{page.caption[0]});
     }    
 	});
 
