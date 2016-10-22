@@ -22,8 +22,8 @@
 
 <script>
 	
-    $( ".gallery" ).each(function( index ) {
-        {% capture number %}index{% endcapture %}
+    $( ".gallery" ).each(function(index) {
+        {% capture number %}var index;{% endcapture %}
         alert("{{number}}");
         $(this).attr('alt',"{{page.caption[number]}}");
     });
