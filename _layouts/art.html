@@ -23,7 +23,7 @@
 <script>
 	
     $( ".gallery" ).each(function( index ) {
-        {% capture "number"%}index{% endcapture %}
+        {% capture number %}index{% endcapture %}
         $(this).attr('alt',"{{page.caption[number]}}");
     });
     
