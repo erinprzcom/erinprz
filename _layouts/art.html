@@ -24,7 +24,7 @@
 	
     var array = [];
        {% for item in page.caption %}
-       array.push({{item}});
+       array.push("{{item}}");
        {% endfor %}
 
     $( ".gallery" ).each(function(index) {
