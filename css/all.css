@@ -135,6 +135,15 @@ pageheader img{
   padding-left:10px;
 }
 
+
+.aboutpage{
+  max-width:800px;
+  margin:auto;
+  margin-top:200px;
+  margin-bottom:200px;
+}
+
+
 footer{
   position:absolute;
   width:100%;
