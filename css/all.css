@@ -88,6 +88,14 @@ h1, h2{
   display:inline-block;
 }
 
+#instafeed img{
+    object-fit:cover;
+  width:250px;
+  height:400px;
+  padding:15px;
+  display:inline-block;
+}
+
 .pageheaderbackground{
   position:absolute;
   width:100%;
