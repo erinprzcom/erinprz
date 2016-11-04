@@ -3,17 +3,12 @@ layout: page
 title: Here's my story...
 ---
 
-I'm Tom Critchlow, the founder of <span class="brandsmall">Yes! and...</span> - a boutique consulting service. You can follow me on twitter here: <a href="https://twitter.com/tomcritchlow">@tomcritchlow</a>.
+<div class="aboutcontent">
 
-I created this identity to formalize and provide structure to the loose, improv nature of consulting. It's going to evolve and take on many forms but for now all consulting is done by me. My core thesis revolves around the following ideas:
+Hi there, I'm a creative spirit, artist, mom and entrepreneur.  I am the founder of [Fiercely Curious](http://fiercelycurious.com) and a lifelong creative.
 
- - Distributed & part-time teams are the new normal but finding talent is hard
- - You can't talk about content without talking about technology and vice versa
- - There are new models of attention on the web that require fresh thinking
- - Clients should be treated like partners not paychecks
+Get in touch at erin@fiercelycurious.com
 
-I'm based in Brooklyn, NY and love interesting coffee meetings so get in touch?
- 
-<a href="mailto:tom@yesand.nyc">tom@yesand.nyc</a>
+xo 
 
-917 414 9121
+    </div>

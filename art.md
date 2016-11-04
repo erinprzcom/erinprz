@@ -7,5 +7,3 @@ caption:
   - banana
   - orange
 ---
-
-http://jsfiddle.net/marcandre/9v04ypnd/
