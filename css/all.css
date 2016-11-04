@@ -88,6 +88,10 @@ h1, h2{
   display:inline-block;
 }
 
+.legend{
+  z-index:3;
+}
+
 #instafeed img{
     object-fit:cover;
   width:250px;
