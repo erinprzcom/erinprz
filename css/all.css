@@ -90,6 +90,7 @@ h1, h2{
 
 .legend{
   z-index:3;
+  text-align:center;
 }
 
 #instafeed img{
