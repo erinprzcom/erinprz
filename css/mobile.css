@@ -60,4 +60,12 @@ h2{font-size:20px;}
     margin:auto;
 }
 
+.aboutcontent{
+    margin-top:300px;
+}
+
+.aboutcontent h2{
+    font-size:30px;
+}
+
 }
