@@ -21,6 +21,7 @@ header img{
 .imagegallery img{
     object-fit: initial;
     width: 90%;
+    height:initial;
     display: block;
     margin:auto;
 }
