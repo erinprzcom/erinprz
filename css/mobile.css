@@ -13,4 +13,16 @@ header img{
     bottom:30px;
 }
 
+.imagegallery{
+    width:100%;
+
+}
+
+.imagegallery img{
+    object-fit: initial;
+    width: 90%;
+    display: block;
+    margin:auto;
+}
+
 }
