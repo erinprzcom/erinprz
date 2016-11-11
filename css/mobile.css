@@ -23,6 +23,10 @@ pageheader{
     font-size:12px;
 }
 
+.pagenavigation a{
+    padding-left:0px;
+}
+
 .imagegallery{
     width:100%;
 
