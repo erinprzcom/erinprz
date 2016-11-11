@@ -17,6 +17,11 @@ pageheader{
     width:100%;
 }
 
+pageheader img{
+    margin:auto;
+    display:block;
+}
+
 .pagenavigation{
     float:initial;
     text-align:center;
