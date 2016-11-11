@@ -22,6 +22,8 @@ pageheader img{
     display:block;
 }
 
+h1{margin-top:160px;}
+
 .pagenavigation{
     float:initial;
     text-align:center;
@@ -39,6 +41,14 @@ pageheader img{
 
 .imagegallery img{
     object-fit: initial;
+    width: 90%;
+    height:initial;
+    display: block;
+    margin:auto;
+}
+
+#instafeed img {
+       object-fit: initial;
     width: 90%;
     height:initial;
     display: block;
