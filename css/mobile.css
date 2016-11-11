@@ -17,6 +17,12 @@ pageheader{
     width:100%;
 }
 
+.pagenavigation{
+    float:initial;
+    text-align:center;
+    font-size:12px;
+}
+
 .imagegallery{
     width:100%;
 
