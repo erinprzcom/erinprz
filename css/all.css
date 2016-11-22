@@ -74,6 +74,10 @@ h1, h2{
   color:#993D73;
 }
 
+h2 a:visited{
+  color:#993D73;
+}
+
 .imagegallery{
   width:1200px;
   margin:auto;
