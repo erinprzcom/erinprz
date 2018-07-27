@@ -1,0 +1,136 @@
+/* CSS files add styling rules to your content */
+
+body{
+  margin:0px;
+  padding:0px;
+  font-family:"Playfair+Display";
+}
+
+
+.fullheight{
+  height:100vh;
+  width:100vw;
+  margin:0px;
+  padding:0px;
+}
+
+
+.option1{
+   width:100%;
+  height:200vh;
+  margin-bottom:100vh;
+  margin:0px;
+  padding:0px;
+  z-index:3;
+  position:relative;
+}
+
+.shade{
+  width:100%;
+  height:100vh;
+  background-color:rgba(0,0,0,0.3);
+  position:absolute;
+  top:0;
+  z-index:1;
+}
+
+.option1 .wrapper{
+  text-align:center;
+  color:white;
+}
+
+.option1 .title{
+  max-height:50vh;
+  display:block;
+  margin:auto;
+  padding-top:10%;
+}
+
+.option1 .erinprz{
+  margin:auto;
+  max-width:200px;
+  display:block;
+}
+
+.textinsert{
+  width:100%;
+  margin:auto;
+  height:100vh;
+  background-color:white;
+color: #212121;
+  text-align:center;
+}
+
+.textinsert p{
+  font-size:24px;
+  line-height:35px;
+  display: flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height:100vh;
+  padding:0px;
+  margin:0px;
+  font-family:"Playfair Display";
+  
+}
+
+.textinsert img{
+  filter:brightness(0);
+  display:inline-block;
+}
+
+.second{
+  width:100%;
+   background: url("https://cdn.glitch.com/e5503408-cf2d-4b3d-b1d6-b93c80157de4%2FSea-Monster-IS-print-resize.jpg?1528238924282") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position:fixed;
+  top:0px;
+  z-index:-1;
+  
+}
+
+.third{
+  width:100%;
+  
+   background: url("https://cdn.glitch.com/e5503408-cf2d-4b3d-b1d6-b93c80157de4%2FDeep-Seascape-print-resize.jpg?1528239370584") no-repeat right center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+  
+ 
+}
+
+.fourth{
+  width:100%;
+  
+   background: url("https://cdn.glitch.com/e5503408-cf2d-4b3d-b1d6-b93c80157de4%2FNight-Bedtime-print-resize.jpg?1528239464715") no-repeat left center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+  
+ 
+}
+
+@media (max-width: 1024px) {
+
+
+  
+.title{
+  max-height:initial !important;
+  max-width:90% !important;
+  }
+  
+
+  
+}
