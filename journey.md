@@ -32,7 +32,7 @@
     
     <div class="option1">
       <div class="wrapper">
-        <img class="title" src="https://cdn.glitch.com/e5503408-cf2d-4b3d-b1d6-b93c80157de4%2FTITLE%20JOURNEY%20white%20no%20ground.png?1528241722526" />
+        <img class="title" src="/images/journey/title.png" />
         <p>
           by
         </p>

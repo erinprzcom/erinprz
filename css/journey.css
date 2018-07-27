@@ -85,7 +85,7 @@ color: #212121;
 
 .second{
   width:100%;
-   background: url("https://cdn.glitch.com/e5503408-cf2d-4b3d-b1d6-b93c80157de4%2FSea-Monster-IS-print-resize.jpg?1528238924282") no-repeat center center fixed; 
+   background: url("/images/seamonster.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -99,7 +99,7 @@ color: #212121;
 .third{
   width:100%;
   
-   background: url("https://cdn.glitch.com/e5503408-cf2d-4b3d-b1d6-b93c80157de4%2FDeep-Seascape-print-resize.jpg?1528239370584") no-repeat right center fixed; 
+   background: url("/images/journey/deepsea,jpg") no-repeat right center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -112,7 +112,7 @@ color: #212121;
 .fourth{
   width:100%;
   
-   background: url("https://cdn.glitch.com/e5503408-cf2d-4b3d-b1d6-b93c80157de4%2FNight-Bedtime-print-resize.jpg?1528239464715") no-repeat left center fixed; 
+   background: url("/images/journey/bedtime.jpg") no-repeat left center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
