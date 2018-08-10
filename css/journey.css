@@ -61,7 +61,7 @@ color: #212121;
   text-align:center;
 }
 
-.textinsert p{}
+.textinsert p{
   font-size:24px;
   line-height:35px;
   display: flex;
