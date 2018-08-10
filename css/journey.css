@@ -78,7 +78,7 @@ color: #212121;
   
 }
 
-textinsert a{
+.textinsert a{
   display:contents;
 }
 
