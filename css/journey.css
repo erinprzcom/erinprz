@@ -130,7 +130,10 @@ color: #212121;
   max-height:initial !important;
   max-width:90% !important;
   }
-  
+
+.second,.third,.fourth{
+  background-attachment:scroll
+}
 
   
 }
