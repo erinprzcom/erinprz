@@ -52,6 +52,12 @@ body{
   display:block;
 }
 
+.erinprz{
+  margin:auto;
+  max-width:200px;
+  display:block;
+}
+
 .textinsert{
   width:100%;
   margin:auto;
