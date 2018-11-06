@@ -52,10 +52,12 @@ body{
   display:block;
 }
 
-.erinprz{
+.erinprzbottom{
   margin:auto;
   max-width:200px;
   display:block;
+  position:absolute;
+  bottom:20px;
 }
 
 .textinsert{
@@ -121,7 +123,7 @@ color: #212121;
 
 .fourth{
   width:100%;
-  
+  position:relative;
    background: url("/images/journey/bedtime.jpg") no-repeat left center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
