@@ -1,4 +1,4 @@
 ---
 layout: redirect
-redirect: https://drive.google.com/file/d/19eFs6XbW_XvPoDS2JqrzHwV0zhR9mONC/view?usp=sharing
+redirect: https://drive.google.com/file/d/1jzEZspx1v3xBg6rH5uNiQRpYY1drxM4k/view?usp=sharing
 ---
