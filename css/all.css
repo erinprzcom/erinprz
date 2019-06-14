@@ -82,6 +82,10 @@ h2 a:visited{
   color:white;
 }
 
+.blacklink{
+  color:#212121;
+}
+
 .imagegallery{
   width:1200px;
   margin:auto;
