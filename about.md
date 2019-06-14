@@ -10,7 +10,6 @@ title: Here's my story...
 I've lived in Italy, France, and now call Brooklyn home.
 <br>
 Get in touch at erinprz@gmail.com
-<br>
-xo </h2>
+</h2>
 
     </div>
