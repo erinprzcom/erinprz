@@ -9,7 +9,7 @@ title: Here's my story...
 <br>
 I've lived in Italy, France, and now call Brooklyn home.
 <br>
-Get in touch at erin@fiercelycurious.com
+Get in touch at erinprz@gmail.com
 <br>
 xo </h2>
 
