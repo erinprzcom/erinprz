@@ -53,11 +53,21 @@ body{
 }
 
 .wrapper h2{
-  color:yellow;
+  color:white;
   display:block;
   border-radius:5px;
+  width:300px;
+  padding:10px;
+  margin:auto;
   background-color:#05ce78;
-  
+
+}
+
+.kickstarter{
+  max-width:400px;
+  padding-top:10px;
+  padding-bottom:10px;
+
 }
 
 .erinprzbottom{
