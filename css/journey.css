@@ -60,7 +60,11 @@ body{
   padding:10px;
   margin:auto;
   background-color:#05ce78;
+  font-family:Helvetica;
+}
 
+.wrapper h2 a{
+  text-decoration:none;
 }
 
 .kickstarter{
