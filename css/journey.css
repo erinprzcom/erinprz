@@ -52,6 +52,10 @@ body{
   display:block;
 }
 
+.wrapper h2{
+  color:yellow;
+}
+
 .erinprzbottom{
   margin:auto;
   max-width:200px;
