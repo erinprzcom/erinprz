@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="viewport" content="width=device-width user-scalable=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <style>
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+      html {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+    }
+    /* from https://css-tricks.com/snippets/css/orientation-lock/ */
+
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    #slidescontainer {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    #swiperwrapper {
+      width: 100%;
+      height: 100%;
+      position: flex;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+    }
+
+    #right {
+      position: fixed;
+      right: 0px;
+      height: 100vh;
+      width: 40vw;
+      z-index: 5;
+    }
+
+    #slidetext {
+      max-width: 90%;
+    }
+  </style>
+
+  <body>
+    <div id="right"></div>
+
+    <div id="slidescontainer">
+      <div id="sliderwrapper">
+        <div class="slide" id="slidebackground">
+          <img id="slidetext" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var slidecount;
+      var slidecount = 0;
+
+    var data = {
+    "slides": [
+      {
+        "spread": "images/Title-Page-Ebook.png"
+      },        
+      {
+        "textbackground": "images/Journey-Shooting-Star-Ebook-IMAGE-TXT-1-CNTR.png",
+        "textimage": "images/Journey-Shooting-Star-Ebook-TEXT-1-CNTR.png"
+      },
+      {
+        "textbackground": "images/Journey-Shooting-Star-Ebook-IMAGE-TXT-2-CNTR.png",
+        "textimage": "images/Journey-Shooting-Star-Ebook-TEXT-2-CNTR.png"
+      },
+      {
+        "spread": "images/Journey-Shooting-Star-Ebook-TOP.png"
+      },      
+      {
+        "textbackground": "images/Rocket-Ebook-IMAGE-BTM.png",
+        "textimage": "images/Rocket-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Rocket-Ebook.png"
+      },      
+      {
+        "textbackground": "images/Lightning-Ebook-IMAGE-TXT.png",
+        "textimage": "images/Lightning-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Lightning-Ebook.png"
+      },
+      {
+        "textbackground": "images/Balloons-Ebook-IMAGE-TXT-CNTR.png",
+        "textimage": "images/Balloons-Ebook-TXT-CNTR.png"
+      },
+      {
+        "spread": "images/Balloons-Ebook-BTM.png"
+      },
+      {
+        "textbackground": "images/Desert-Surf-Ebook-IMAGE-TXT-TOP.png",
+        "textimage": "images/Desert-Surf-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Desert-Surf-Ebook-TOP.png"
+      },
+      {
+        "textbackground": "images/Ski-Jump-Ebook-IMAGE-TXT-TOP.png",
+        "textimage": "images/Ski-Jump-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Ski-Jump-Ebook-CNTR.png"
+      },
+      {
+        "textbackground": "images/Sea-Monster-Ebook-IMAGE-BTM.png",
+        "textimage": "images/Sea-Monster-Ebook-TXT-BTM.png"
+      },
+      {
+        "spread": "images/Sea-Monster-Ebook-TOP.png"
+      },
+      {
+        "textbackground": "images/Great-Wall-Ebook-IMAGE-TXT-CNTR.png",
+        "textimage": "images/Great-Wall-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Great-Wall-Ebook-BTM.png"
+      },
+      {
+        "textbackground": "images/Deep-Sea-Divers-Ebook-TXT-IMAGE-TOP.png",
+        "textimage": "images/Deep-Sea-Divers-Ebook-TXT-TOP.png"
+      },
+      {
+        "spread": "images/Deep-Sea-Divers-Ebook-TOP.png"
+      },
+      {
+        "textbackground": "images/Camels-Ebook-IMAGE-TXT-CNTR.png",
+        "textimage": "images/Camels-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Camels-Ebook-TOP.png"
+      },
+      {
+        "textbackground": "images/Northern-Lights-Ebook-IMAGE-TXT-BTM.png",
+        "textimage": "images/Northern-Lights-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Northern-Lights-Ebook-TOP.png"
+      },
+      {
+        "textbackground": "images/Honeybeess-Ebook-IMAGE-TXT-CNTR.png",
+        "textimage": "images/Honeybeess-Ebook-TXT-CNTR.png"
+      },
+      {
+        "spread": "images/Honeybeess-Ebook-CNTR.png"
+      },
+      {
+        "textbackground": "images/WIND-Ebook-TXT-IMAGE-CNTR.png",
+        "textimage": "images/WIND-Ebook-TXT-CNTR.png"
+      },
+      {
+        "spread": "images/WIND-Ebook-CNTR.png"
+      },
+      {
+        "textbackground": "images/Steam-Train-Ebook-IMAGE-TXT-CNTR.png",
+        "textimage": "images/Steam-Train-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Steam-Train-Ebook-CNTR.png"
+      },
+      {
+        "textbackground": "images/Night-Bedtime-Ebook-IMAGE-TXT-CNTR.png",
+        "textimage": "images/Night-Bedtime-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Night-Bedtime-Ebook-CNTR.png"
+      },
+      {
+        "textbackground": "images/The-End-Ebook-IMAGE-TXT-CNTR.png",
+        "textimage": "images/The-End-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/The-End-Ebook.png"
+      },                                                                              
+    ]
+    };
+
+    var slides = data.slides;
+
+    $(document).keydown(function(e){
+    if (e.which == 39) { 
+       moveright();
+       return false;
+    }
+    });
+
+      $("#right").click(function() {
+        moveright()
+      });
+
+      function moveright(){
+        $("#slidetext").attr("src", "");
+        var textbackground = slides[slidecount].textbackground;
+        var textimage = slides[slidecount].textimage;
+        var spread = slides[slidecount].spread;
+        if (spread) {
+          $("#slidebackground").css("background-image", "url(" + spread + ")");
+        }
+        if (textbackground) {
+          $("#slidebackground").css(
+            "background-image",
+            "url(" + textbackground + ")"
+          );
+          $("#slidetext").attr("src", textimage);
+        }
+
+        slidecount++;
+      };
+
+    </script>
+  </body>
+</html>
