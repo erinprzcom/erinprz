@@ -7,7 +7,7 @@
     <link rel="manifest" href="manifest.json" />
     <meta name="viewport" content="width=device-width user-scalable=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -18,7 +18,7 @@
   </head>
 
   <style>
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+   /* @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
       html {
         transform: rotate(-90deg);
         transform-origin: left top;
@@ -34,6 +34,7 @@
     body {
       margin: 0px;
       padding: 0px;
+      font-family:"Playfair Display"
     }
 
     #slidescontainer {
@@ -75,12 +76,20 @@
     }
     }
 
+    #intro{
+      max-width:500px;
+      margin:auto;
+      font-size: 24px;
+    line-height: 35px;
+    }
+
     #right {
       position: fixed;
       right: 0px;
       height: 100vh;
       width: 70vw;
       z-index: 5;
+      display:none;
     }
 
     #left {
@@ -89,6 +98,7 @@
       height: 100vh;
       width: 30vw;
       z-index: 5;
+      display:none;
     }
 
     #slidetext {
@@ -105,10 +115,11 @@
     <div id="slidescontainer">
 
         <div id="intro">
-            <p>Please <a href="#" onclick="openFullscreen()">go fullscreen</a></p>
+            <p>Please <a href="#" onclick="startReading()">Begin Reading</a></p>
             <p>Please rotate your device.</p>
             <p id="loading">Images loading...</p>
-            <p>iOS: for best viewing open in safari, click share button, scroll down to "add to homescreen"</p>
+            <p>iOS: for best viewing open in safari, click share button (<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action_2x.png" />), scroll down to "add to homescreen"</p>
+            <p>Order a physical copy of the book on Etsy here.</p>
         </div>
 
       <div id="sliderwrapper">
@@ -121,21 +132,9 @@
     <script>
 
     var elem = document.documentElement;
-
-    /* View in fullscreen */
-    function openFullscreen() {
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.mozRequestFullScreen) { /* Firefox */
-        elem.mozRequestFullScreen();
-      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE/Edge */
-        elem.msRequestFullscreen();
-      }
-    }      
-      var slidecount;
-      var slidecount = -1;
+    
+    var slidecount;
+    var slidecount = -1;
 
     var data = {
     "slides": [
@@ -183,7 +182,7 @@
       },
       {
         "textbackground": "images/Ski-Jump-Ebook-IMAGE-TXT-TOP.png",
-        "textimage": "images/Ski-Jump-Ebook-TXT.png"
+        "textimage": "images/Ski-Jump-Ebook-TXT-2.png"
       },
       {
         "spread": "images/Ski-Jump-Ebook-CNTR.png"
@@ -253,17 +252,38 @@
         "textimage": "images/The-End-Ebook-TXT.png"
       },      
       {
-        "spread": "images/Night-Bedtime-Ebook-CNTR.png"
-      },
-      {
-        "textbackground": "images/The-End-Ebook-IMAGE-TXT-CNTR.png",
-        "textimage": "images/The-End-Ebook-TXT.png"
+        "textbackground": "images/Night-Bedtime-Ebook-CNTR.png",
+        "textimage": "images/Night-Bedtime-Ebook-text-option-2.png"
       },
       {
         "spread": "images/The-End-Ebook.png"
       },                                                                              
     ]
     };
+
+    function startReading(){
+      openFullscreen();
+      $("#left").show();
+      $("#right").show();
+      slidecount = 0;
+      changeSlide(0);
+    };
+
+    /* View in fullscreen */
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    }      
+
+
+ 
 
     var slides = data.slides;
 
@@ -308,7 +328,7 @@ function changeSlide(num){
       $("#slidebackground").css("background-image", "url(" + textbackground + ")");
       $("#slidetext").attr("src", textimage);
     }
-    $(".slide" ).fadeIn( function() {
+    $(".slide" ).fadeIn("fast", function() {
     // Animation complete.
     });
     });

@@ -1,0 +1,10 @@
+Update meta info OG tags
+Add analytics
+Update images in manifest
+ios prompt to add to homescreen
+android prompt to add to homescreen
+Confirm images loading is a thing
+Homescreen splash
+Fix going backwards past beginning
+Add end credits screen (loop around?)
+Cloudflare?
