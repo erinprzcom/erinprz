@@ -14,6 +14,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+
   </head>
 
   <style>
@@ -54,11 +55,39 @@
       background-size: cover;
     }
 
+    #slidebackground{
+      /*transition: background 1s linear;*/
+    }
+
+    @media (min-width: 1000px) {
+    #slidetext{
+      max-width:1000px;
+       position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }    
+    }
+    
+    @media (max-width: 900px) {
+    #slidetext{
+      max-width:100%;
+    }
+    }
+
     #right {
       position: fixed;
       right: 0px;
       height: 100vh;
-      width: 40vw;
+      width: 70vw;
+      z-index: 5;
+    }
+
+    #left {
+      position: fixed;
+      left: 0px;
+      height: 100vh;
+      width: 30vw;
       z-index: 5;
     }
 
@@ -68,9 +97,18 @@
   </style>
 
   <body>
+
+    <div id="left"></div>
     <div id="right"></div>
 
+
     <div id="slidescontainer">
+
+        <p id="intro">
+            Please <a href="#" onclick="openFullscreen()">go fullscreen</a>
+            Please rotate your device
+          </p>
+
       <div id="sliderwrapper">
         <div class="slide" id="slidebackground">
           <img id="slidetext" />
@@ -79,8 +117,23 @@
     </div>
 
     <script>
+
+    var elem = document.documentElement;
+
+    /* View in fullscreen */
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    }      
       var slidecount;
-      var slidecount = 0;
+      var slidecount = -1;
 
     var data = {
     "slides": [
@@ -209,34 +262,126 @@
     var slides = data.slides;
 
     $(document).keydown(function(e){
-    if (e.which == 39) { 
-       moveright();
-       return false;
+    if (e.which == 39) { // right key
+      slidecount++;
+      changeSlide(slidecount);
+      return false;
     }
     });
 
-      $("#right").click(function() {
-        moveright()
-      });
+    $("#right").click(function() {
+      slidecount++;
+      changeSlide(slidecount);
+    });
 
-      function moveright(){
-        $("#slidetext").attr("src", "");
-        var textbackground = slides[slidecount].textbackground;
-        var textimage = slides[slidecount].textimage;
-        var spread = slides[slidecount].spread;
-        if (spread) {
-          $("#slidebackground").css("background-image", "url(" + spread + ")");
-        }
-        if (textbackground) {
-          $("#slidebackground").css(
-            "background-image",
-            "url(" + textbackground + ")"
-          );
-          $("#slidetext").attr("src", textimage);
-        }
+    $(document).keydown(function(e){
+    if (e.which == 37) { //left key
+      slidecount--;
+      changeSlide(slidecount);
+      return false;
+    }
+    });
 
-        slidecount++;
-      };
+    $("#left").click(function() {
+      slidecount--;      
+      changeSlide(slidecount);
+    });
+
+
+function changeSlide(num){
+  $(".slide" ).fadeOut( "fast", function() {
+    $("#intro").hide();
+    $("#slidetext").attr("src", "");
+    var textbackground = slides[num].textbackground;
+    var textimage = slides[num].textimage;
+    var spread = slides[num].spread;
+    if (spread) {
+      $("#slidebackground").css("background-image", "url(" + spread + ")");
+    }
+    if (textbackground) {
+      $("#slidebackground").css("background-image", "url(" + textbackground + ")");
+      $("#slidetext").attr("src", textimage);
+    }
+    $(".slide" ).fadeIn( function() {
+    // Animation complete.
+    });
+    });
+  };
+
+/**
+ * Loader function that helps to trigger a callback when multiple images has been loaded. Besides
+ * indicates which images were correctly/wrong loaded.
+ * 
+ * @param {Array} Images An array of strings with the paths to the images.
+ * @param {Function} Callback Callback function executed when all images has been loaded or not.
+ */
+ function ImageLoader(Images, Callback){
+    // Keep the count of the verified images
+    var allLoaded = 0;
+
+    // The object that will be returned in the callback
+    var _log = {
+        success: [],
+        error: []
+    };
+
+    // Executed everytime an img is successfully or wrong loaded
+    var verifier = function(){
+        allLoaded++;
+
+        // triggers the end callback when all images has been tested
+        if(allLoaded == Images.length){
+            Callback.call(undefined, _log);
+        }
+    };
+
+    // Loop through all the images URLs
+    for (var index = 0; index < Images.length; index++) {
+        // Prevent that index has the same value by wrapping it inside an anonymous fn
+        (function(i){
+            // Image path providen in the array e.g image.png
+            var imgSource = Images[i];
+            var img = new Image();
+            
+            img.addEventListener("load", function(){
+                _log.success.push(imgSource);
+                verifier();
+            }, false); 
+            
+            img.addEventListener("error", function(){
+                _log.error.push(imgSource);
+                verifier();
+            }, false); 
+           
+            img.src = imgSource;
+        })(index);
+    }
+};
+
+var bookimages = [];
+
+for (slide in slides){
+    var textbackground = slides[slide].textbackground;
+    var textimage = slides[slide].textimage;
+    var spread = slides[slide].spread;
+    if (spread) {
+      bookimages.push(spread);
+    }
+    if (textbackground) {
+      bookimages.push(textbackground);
+      bookimages.push(textimage);
+    }
+};
+
+ImageLoader(bookimages, function(result){
+    if(result.error){
+        // outputs: ["example.png", "example.jpg"]
+        console.log("The following images couldn't be properly loaded: ", result.error);
+    }
+
+    // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
+    console.log("The following images were succesfully loaded: ", result.success);
+});
 
     </script>
   </body>
