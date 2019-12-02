@@ -104,10 +104,11 @@
 
     <div id="slidescontainer">
 
-        <p id="intro">
-            Please <a href="#" onclick="openFullscreen()">go fullscreen</a>
-            Please rotate your device
-          </p>
+        <div id="intro">
+            <p>Please <a href="#" onclick="openFullscreen()">go fullscreen</a></p>
+            <p>Please rotate your device.</p>
+            <p id="loading">Images loading...</p>
+        </div>
 
       <div id="sliderwrapper">
         <div class="slide" id="slidebackground">
@@ -314,6 +315,7 @@ function changeSlide(num){
  * 
  * @param {Array} Images An array of strings with the paths to the images.
  * @param {Function} Callback Callback function executed when all images has been loaded or not.
+ * From here: https://ourcodeworld.com/articles/read/571/how-to-verify-when-multiple-images-have-been-loaded-in-javascript
  */
  function ImageLoader(Images, Callback){
     // Keep the count of the verified images
@@ -381,6 +383,7 @@ ImageLoader(bookimages, function(result){
 
     // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
     console.log("The following images were succesfully loaded: ", result.success);
+    $("#loading").html("Images Loaded!");
 });
 
     </script>
