@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hello!</title>
+    <title>Journey To The End of the Night (ebook version) by Erin Przekop</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="manifest" href="manifest.json" />
@@ -104,6 +104,25 @@
     #slidetext {
       max-width: 90%;
     }
+
+/* From here: https://stackoverflow.com/questions/30102792/css-media-query-to-target-only-ios-devices */
+@supports (-webkit-overflow-scrolling: touch) {
+  #ios{
+    display:visible;
+  }
+  #android{
+    display:none;
+  }
+}
+
+@supports not (-webkit-overflow-scrolling: touch) {
+  #ios{
+    display:none;
+  }
+  #android{
+    display:visible;
+  }
+}    
   </style>
 
   <body>
@@ -118,7 +137,8 @@
             <p>Please <a href="#" onclick="startReading()">Begin Reading</a></p>
             <p>Please rotate your device.</p>
             <p id="loading">Images loading...</p>
-            <p>iOS: for best viewing open in safari, click share button (<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action_2x.png" />), scroll down to "add to homescreen"</p>
+            <p id="ios">iOS: for best viewing open in safari, click share button (<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action_2x.png" />), scroll down to "add to homescreen"</p>
+            <p id="android">Mobile: for best viewing "add to homescreen"</p>
             <p>Order a physical copy of the book on Etsy here.</p>
         </div>
 
@@ -246,10 +266,6 @@
       {
         "textbackground": "images/Night-Bedtime-Ebook-IMAGE-TXT-CNTR.png",
         "textimage": "images/Night-Bedtime-Ebook-TXT.png"
-      },
-      {
-        "textbackground": "images/Night-Bedtime-Ebook-CNTR.png",
-        "textimage": "images/The-End-Ebook-TXT.png"
       },      
       {
         "textbackground": "images/Night-Bedtime-Ebook-CNTR.png",
