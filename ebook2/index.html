@@ -407,7 +407,7 @@ function changeSlide(num){
       $("#slidetext").attr("src", textimage);
     }
     $(".slide" ).fadeIn("fast", function() {
-    // Animation complete.
+      window.scrollTo(0,1);
     });
     });
   };
