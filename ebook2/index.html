@@ -60,6 +60,10 @@
       /*transition: background 1s linear;*/
     }
 
+    #slidetext {
+      max-width: 90%;
+    }
+
     @media (min-width: 1000px) {
     #slidetext{
       max-width:1000px;
@@ -72,6 +76,10 @@
     
     @media (max-width: 900px) {
     #slidetext{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       max-width:100%;
     }
     }
@@ -105,9 +113,7 @@
       display:none;
     }
 
-    #slidetext {
-      max-width: 90%;
-    }
+
 
 /* From here: https://stackoverflow.com/questions/30102792/css-media-query-to-target-only-ios-devices */
 @supports (-webkit-overflow-scrolling: touch) {
@@ -217,6 +223,8 @@
     
     var slidecount;
     var slidecount = -1;
+    var keypress;
+    var keypress = 0;
 
     var data = {
     "slides": [
@@ -344,6 +352,7 @@
       $("#left").show();
       $("#right").show();
       slidecount = 0;
+      keypress = 1;
       changeSlide(0);
     };
 
@@ -366,24 +375,23 @@
     var slides = data.slides;
 
     $(document).keydown(function(e){
-    if (e.which == 39) { // right key
-      slidecount++;
-      changeSlide(slidecount);
-      return false;
-    }
+    if(keypress == 1){  
+      if (e.which == 39) { // right key
+        slidecount++;
+        changeSlide(slidecount);
+        return false;
+      }
+      if (e.which == 37) { //left key
+        slidecount--;
+        changeSlide(slidecount);
+        return false;
+      }
+    };
     });
 
     $("#right").click(function() {
       slidecount++;
       changeSlide(slidecount);
-    });
-
-    $(document).keydown(function(e){
-    if (e.which == 37) { //left key
-      slidecount--;
-      changeSlide(slidecount);
-      return false;
-    }
     });
 
     $("#left").click(function() {
@@ -393,6 +401,10 @@
 
 
 function changeSlide(num){
+  if(num==-1 || num==33){
+    num=0;
+    slidecount = 0;
+  };
   $(".slide" ).fadeOut( "fast", function() {
     $("#intro").hide();
     $("#slidetext").attr("src", "");
@@ -407,7 +419,7 @@ function changeSlide(num){
       $("#slidetext").attr("src", textimage);
     }
     $(".slide" ).fadeIn("fast", function() {
-      window.scrollTo(0,1);
+      // loaded
     });
     });
   };
