@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Journey To The End of the Night (ebook version) by Erin Przekop</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="viewport" content="width=device-width user-scalable=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+  </head>
+
+  <style>
+   /* @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+      html {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+    }
+    /* from https://css-tricks.com/snippets/css/orientation-lock/ */
+
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-family:"Playfair Display"
+    }
+
+    #slidescontainer {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    #swiperwrapper {
+      width: 100%;
+      height: 100%;
+      position: flex;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+    }
+
+    #slidebackground{
+      /*transition: background 1s linear;*/
+    }
+
+    @media (min-width: 1000px) {
+    #slidetext{
+      max-width:1000px;
+       position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }    
+    }
+    
+    @media (max-width: 900px) {
+    #slidetext{
+      max-width:100%;
+    }
+    }
+
+    #intro{
+      max-width:500px;
+      margin:auto;
+      font-size: 24px;
+    line-height: 35px;
+    }
+
+    #right {
+      position: fixed;
+      right: 0px;
+      height: 100vh;
+      width: 70vw;
+      z-index: 5;
+      display:none;
+    }
+
+    #left {
+      position: fixed;
+      left: 0px;
+      height: 100vh;
+      width: 30vw;
+      z-index: 5;
+      display:none;
+    }
+
+    #slidetext {
+      max-width: 90%;
+    }
+
+/* From here: https://stackoverflow.com/questions/30102792/css-media-query-to-target-only-ios-devices */
+@supports (-webkit-overflow-scrolling: touch) {
+  #ios{
+    display:visible;
+  }
+  #android{
+    display:none;
+  }
+}
+
+@supports not (-webkit-overflow-scrolling: touch) {
+  #ios{
+    display:none;
+  }
+  #android{
+    display:visible;
+  }
+}    
+  </style>
+
+  <body>
+
+    <div id="left"></div>
+    <div id="right"></div>
+
+
+    <div id="slidescontainer">
+
+        <div id="intro">
+            <p>Please <a href="#" onclick="startReading()">Begin Reading</a></p>
+            <p>Please rotate your device.</p>
+            <p id="loading"><img src="/images/Loading-GIF-Ebook.gif"></p>
+            <p id="ios">iOS: for best viewing open in safari, click share button (<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action_2x.png" />), scroll down to "add to homescreen"</p>
+            <p id="android">Mobile: for best viewing "add to homescreen"</p>
+            <p>Order a physical copy of the book on Etsy here.</p>
+        </div>
+
+      <div id="sliderwrapper">
+        <div class="slide" id="slidebackground">
+          <img id="slidetext" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+    var elem = document.documentElement;
+    
+    var slidecount;
+    var slidecount = -1;
+
+    var data = {
+    "slides": [
+      {
+        "spread": "images/Title-Page-Ebook.jpg"
+      },        
+      {
+        "textbackground": "images/Journey-Shooting-Star-Ebook-IMAGE-TXT-1-CNTR.jpg",
+        "textimage": "images/Journey-Shooting-Star-Ebook-TEXT-1-CNTR.png"
+      },
+      {
+        "textbackground": "images/Journey-Shooting-Star-Ebook-IMAGE-TXT-2-CNTR.jpg",
+        "textimage": "images/Journey-Shooting-Star-Ebook-TEXT-2-CNTR.png"
+      },
+      {
+        "spread": "images/Journey-Shooting-Star-Ebook.jpg"
+      },      
+      {
+        "textbackground": "images/Rocket-Ebook-IMAGE-BTM.jpg",
+        "textimage": "images/Rocket-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Rocket-Ebook.jpg"
+      },      
+      {
+        "textbackground": "images/Lightning-Ebook-IMAGE-TXT.jpg",
+        "textimage": "images/Lightning-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Lightning-Ebook.jpg"
+      },
+      {
+        "textbackground": "images/Balloons-Ebook-IMAGE-TXT-CNTR.jpg",
+        "textimage": "images/Balloons-Ebook-TXT-CNTR.png"
+      },
+      {
+        "spread": "images/Balloons-Ebook-BTM.jpg"
+      },
+      {
+        "textbackground": "images/Desert-Surf-Ebook-IMAGE-TXT-TOP.jpg",
+        "textimage": "images/Desert-Surf-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Desert-Surf-Ebook-TOP.jpg"
+      },
+      {
+        "textbackground": "images/Ski-Jump-Ebook-IMAGE-TXT-TOP.jpg",
+        "textimage": "images/Ski-Jump-Ebook-TXT-2.png"
+      },
+      {
+        "spread": "images/Ski-Jump-Ebook-CNTR.jpg"
+      },
+      {
+        "textbackground": "images/Sea-Monster-Ebook-IMAGE-BTM.jpg",
+        "textimage": "images/Sea-Monster-Ebook-TXT-BTM.png"
+      },
+      {
+        "spread": "images/Sea-Monster-Ebook-TOP.jpg"
+      },
+      {
+        "textbackground": "images/Great-Wall-Ebook-IMAGE-TXT-CNTR.jpg",
+        "textimage": "images/Great-Wall-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Great-Wall-Ebook-BTM.jpg"
+      },
+      {
+        "textbackground": "images/Deep-Sea-Divers-Ebook-TXT-IMAGE-TOP.jpg",
+        "textimage": "images/Deep-Sea-Divers-Ebook-TXT-TOP.png"
+      },
+      {
+        "spread": "images/Deep-Sea-Divers-Ebook-TOP.jpg"
+      },
+      {
+        "textbackground": "images/Camels-Ebook-IMAGE-TXT-CNTR.jpg",
+        "textimage": "images/Camels-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Camels-Ebook-TOP.jpg"
+      },
+      {
+        "textbackground": "images/Northern-Lights-Ebook-IMAGE-TXT-BTM.jpg",
+        "textimage": "images/Northern-Lights-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Northern-Lights-Ebook-TOP.jpg"
+      },
+      {
+        "textbackground": "images/Honeybees-Ebook-IMAGE-TXT-CNTR.jpg",
+        "textimage": "images/Honeybees-Ebook-TXT-CNTR.png"
+      },
+      {
+        "spread": "images/Honeybees-Ebook-CNTR.jpg"
+      },
+      {
+        "textbackground": "images/WIND-Ebook-TXT-IMAGE-CNTR.jpg",
+        "textimage": "images/WIND-Ebook-TXT-CNTR.png"
+      },
+      {
+        "spread": "images/WIND-Ebook-CNTR.jpg"
+      },
+      {
+        "textbackground": "images/Steam-Train-Ebook-IMAGE-TXT-CNTR.jpg",
+        "textimage": "images/Steam-Train-Ebook-TXT.png"
+      },
+      {
+        "spread": "images/Steam-Train-Ebook-CNTR.jpg"
+      },
+      {
+        "textbackground": "images/Night-Bedtime-Ebook-IMAGE-TXT-CNTR.jpg",
+        "textimage": "images/Night-Bedtime-Ebook-TXT.png"
+      },      
+      {
+        "textbackground": "images/Night-Bedtime-Ebook-CNTR.jpg",
+        "textimage": "images/Night-Bedtime-Ebook-text-option-2.png"
+      },
+      {
+        "spread": "images/The-End-Ebook.jpg"
+      },                                                                              
+    ]
+    };
+
+    function startReading(){
+      openFullscreen();
+      $("#left").show();
+      $("#right").show();
+      slidecount = 0;
+      changeSlide(0);
+    };
+
+    /* View in fullscreen */
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    }      
+
+
+ 
+
+    var slides = data.slides;
+
+    $(document).keydown(function(e){
+    if (e.which == 39) { // right key
+      slidecount++;
+      changeSlide(slidecount);
+      return false;
+    }
+    });
+
+    $("#right").click(function() {
+      slidecount++;
+      changeSlide(slidecount);
+    });
+
+    $(document).keydown(function(e){
+    if (e.which == 37) { //left key
+      slidecount--;
+      changeSlide(slidecount);
+      return false;
+    }
+    });
+
+    $("#left").click(function() {
+      slidecount--;      
+      changeSlide(slidecount);
+    });
+
+
+function changeSlide(num){
+  $(".slide" ).fadeOut( "fast", function() {
+    $("#intro").hide();
+    $("#slidetext").attr("src", "");
+    var textbackground = slides[num].textbackground;
+    var textimage = slides[num].textimage;
+    var spread = slides[num].spread;
+    if (spread) {
+      $("#slidebackground").css("background-image", "url(" + spread + ")");
+    }
+    if (textbackground) {
+      $("#slidebackground").css("background-image", "url(" + textbackground + ")");
+      $("#slidetext").attr("src", textimage);
+    }
+    $(".slide" ).fadeIn("fast", function() {
+    // Animation complete.
+    });
+    });
+  };
+
+/**
+ * Loader function that helps to trigger a callback when multiple images has been loaded. Besides
+ * indicates which images were correctly/wrong loaded.
+ * 
+ * @param {Array} Images An array of strings with the paths to the images.
+ * @param {Function} Callback Callback function executed when all images has been loaded or not.
+ * From here: https://ourcodeworld.com/articles/read/571/how-to-verify-when-multiple-images-have-been-loaded-in-javascript
+ */
+ function ImageLoader(Images, Callback){
+    // Keep the count of the verified images
+    var allLoaded = 0;
+
+    // The object that will be returned in the callback
+    var _log = {
+        success: [],
+        error: []
+    };
+
+    // Executed everytime an img is successfully or wrong loaded
+    var verifier = function(){
+        allLoaded++;
+
+        // triggers the end callback when all images has been tested
+        if(allLoaded == Images.length){
+            Callback.call(undefined, _log);
+        }
+    };
+
+    // Loop through all the images URLs
+    for (var index = 0; index < Images.length; index++) {
+        // Prevent that index has the same value by wrapping it inside an anonymous fn
+        (function(i){
+            // Image path providen in the array e.g image.png
+            var imgSource = Images[i];
+            var img = new Image();
+            
+            img.addEventListener("load", function(){
+                _log.success.push(imgSource);
+                verifier();
+            }, false); 
+            
+            img.addEventListener("error", function(){
+                _log.error.push(imgSource);
+                verifier();
+            }, false); 
+           
+            img.src = imgSource;
+        })(index);
+    }
+};
+
+var bookimages = [];
+
+for (slide in slides){
+    var textbackground = slides[slide].textbackground;
+    var textimage = slides[slide].textimage;
+    var spread = slides[slide].spread;
+    if (spread) {
+      bookimages.push(spread);
+    }
+    if (textbackground) {
+      bookimages.push(textbackground);
+      bookimages.push(textimage);
+    }
+};
+
+ImageLoader(bookimages, function(result){
+    if(result.error){
+        // outputs: ["example.png", "example.jpg"]
+        console.log("The following images couldn't be properly loaded: ", result.error);
+    }
+
+    // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
+    console.log("The following images were succesfully loaded: ", result.success);
+    $("#loading").html("Images Loaded!");
+});
+
+    </script>
+  </body>
+</html>

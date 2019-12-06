@@ -1,0 +1,16 @@
+{
+    "short_name": "Journey ebook",
+    "name": "Journey to the End of the Night",
+    "icons": [
+      {
+        "src": "/images/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/ebook/?source=addtohomepage",
+    "background_color": "#000",
+    "display": "fullscreen",
+    "orientation":"landscape",
+    "theme_color": "#3367D6"
+  }
