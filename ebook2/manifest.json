@@ -8,7 +8,7 @@
         "sizes": "512x512"
       }
     ],
-    "start_url": "/ebook/?source=addtohomepage",
+    "start_url": "/ebook2/?source=addtohomepage",
     "background_color": "#000",
     "display": "fullscreen",
     "orientation":"landscape",

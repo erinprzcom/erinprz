@@ -9,3 +9,5 @@ Add end credits screen (loop around?)
 Cloudflare?
 Fix white box issue (no img src issue?)
 Do the top, bottom align in JS
+
+DOUBLE CHECK URL in MANIFEST to be ebook vs ebook2!!

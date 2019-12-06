@@ -480,7 +480,8 @@ function changeSlide(num){
     }
 };
 
-var bookimages = ["images/Loading-GIF-Ebook.gif"];
+var singlegif = ["images/Loading-GIF-Ebook.gif"];
+var bookimages = [];
 
 for (slide in slides){
     var textbackground = slides[slide].textbackground;
@@ -494,6 +495,17 @@ for (slide in slides){
       bookimages.push(textimage);
     }
 };
+
+ImageLoader(singlegif, function(result){
+  if(result.error){
+        // outputs: ["example.png", "example.jpg"]
+        console.log("The following images couldn't be properly loaded: ", result.error);
+    }
+
+    // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
+    console.log("The following images were succesfully loaded: ", result.success);
+    $("#loading").html("Images Loaded!");
+});
 
 ImageLoader(bookimages, function(result){
     if(result.error){
