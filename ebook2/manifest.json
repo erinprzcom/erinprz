@@ -3,7 +3,7 @@
     "name": "Journey to the End of the Night",
     "icons": [
       {
-        "src": "/images/icons-512.png",
+        "src": "images/Rocket-Icon.png",
         "type": "image/png",
         "sizes": "512x512"
       }
