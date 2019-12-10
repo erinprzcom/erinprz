@@ -69,34 +69,41 @@
       display: block;
     }
 
-    @media (min-width: 1000px) {
-    #slidetext{
-      max-width:1000px;
-       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }    
-    }
-    
-    @media (max-width: 900px) {
-    #slidetext{
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width:90%;
-    }
-    }
+
 
     #intro{
-      max-width:500px;
-      margin:auto;
+      width:100%;
+      height:100vh;
+      background-image:url(images/Cover-Ebook-Layout-No-Title.jpg);
+      background-size:cover;
       font-size: 24px;
     line-height: 35px;
+    text-align:center;
     }
 
-    #loading img{
+    #covertext{
+      width:800px;
+      max-width:100%;
+      display:block;
+      margin:auto;
+
+    }
+
+    .mobilehelptext{
+      display:none;
+    }
+
+    #beginreading{
+      display:none;
+      color:white;
+    }
+
+    #beginreading a{
+      color:white;
+      text-decoration:none;
+    }
+
+    #loading{
       max-width:300px;
     }
 
@@ -189,6 +196,31 @@
   }
 }
 
+@media (min-width: 1000px) {
+    #slidetext{
+      max-width:1000px;
+       position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }    
+    }
+    
+    @media (max-width: 900px) {
+    #slidetext{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width:90%;
+    }
+
+    .mobilehelptext{
+      display:block;
+    }
+
+    }
+
   </style>
 
   <body>
@@ -207,12 +239,21 @@
     <div id="slidescontainer">
 
         <div id="intro">
-            <p>Please <a href="#" onclick="startReading()">Begin Reading</a></p>
-            <p>Please rotate your device.</p>
-            <p id="loading"><img src="images/Loading-GIF-Ebook.gif"></p>
-            <p id="ios">iOS: for best viewing open in safari, click share button (<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action_2x.png" />), scroll down to "add to homescreen"</p>
-            <p id="android">Mobile: for best viewing "add to homescreen"</p>
-            <p>Order a physical copy of the book on Etsy here.</p>
+            <img id="covertext" src="images/Cover-Ebook-Layout-TXT.png" />
+
+          <div class="mainbutton">
+              <p id="beginreading"><a href="#" onclick="startReading()">Begin Reading</a></p>    
+              <img id="loading" src="images/Loading-GIF-Ebook.gif">
+          </div>
+          
+          
+            <div class="mobilehelptext">
+                <p>Please rotate your device.</p>
+                <p id="ios">iOS: for best viewing open in safari, click share button (<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action_2x.png" />), scroll down to "add to homescreen"</p>
+                <p id="android">Mobile: for best viewing "add to homescreen"</p>
+              </div>
+            
+
         </div>
 
       <div id="sliderwrapper">
@@ -504,7 +545,7 @@ ImageLoader(singlegif, function(result){
 
     // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
     console.log("The following images were succesfully loaded: ", result.success);
-    $("#loading").html("Images Loaded!");
+    
 });
 
 ImageLoader(bookimages, function(result){
@@ -515,7 +556,9 @@ ImageLoader(bookimages, function(result){
 
     // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
     console.log("The following images were succesfully loaded: ", result.success);
-    $("#loading").html("Images Loaded!");
+    $("#loading").fadeOut();
+    $("#beginreading").fadeIn();
+    
 });
 
     </script>
