@@ -266,6 +266,9 @@
       display:block;
     }
 
+    .button{
+    box-shadow: 0px 8px 15px 8px rgba(0, 0, 0, 0.1);
+  }
     }
 
   </style>
@@ -607,8 +610,10 @@ ImageLoader(bookimages, function(result){
 
     // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
     console.log("The following images were succesfully loaded: ", result.success);
-    $("#loading").fadeOut("slow");
-    $("#beginreading").fadeIn();
+    $("#loading").fadeOut("slow", function(){
+      $("#beginreading").fadeIn();
+    });
+    
     
 });
 
