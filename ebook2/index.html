@@ -43,10 +43,15 @@
       position: relative;
     }
 
+    #sliderwrapper{
+      display:none;
+    }
+
     #swiperwrapper {
       width: 100%;
       height: 100%;
       position: flex;
+      display:none;
     }
 
     .slide {
@@ -82,8 +87,7 @@
     }
 
     #covertext{
-      width:800px;
-      max-width:100%;
+      max-width:85%;
       display:block;
       margin:auto;
 
@@ -93,18 +97,61 @@
       display:none;
     }
 
+    .mainbutton{
+      background-color:white;
+      width:200px;
+      height:50px;
+      border-radius:0.6em;
+      display:block;
+      margin:auto;
+      line-height:50px;
+      cursor: pointer;
+
+    }
+
+    .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 250px;
+  height: 60px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px 8px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+
+  color: #fff;
+  transform: translateY(-7px);
+}
+
     #beginreading{
       display:none;
-      color:white;
+      color:black;
+
     }
 
     #beginreading a{
-      color:white;
       text-decoration:none;
+      color:black
     }
 
     #loading{
-      max-width:300px;
+      max-height:100%;
     }
 
     #right {
@@ -241,16 +288,19 @@
         <div id="intro">
             <img id="covertext" src="images/Cover-Ebook-Layout-TXT.png" />
 
-          <div class="mainbutton">
-              <p id="beginreading"><a href="#" onclick="startReading()">Begin Reading</a></p>    
-              <img id="loading" src="images/Loading-GIF-Ebook.gif">
-          </div>
+
           
           
             <div class="mobilehelptext">
-                <p>Please rotate your device.</p>
                 <p id="ios">iOS: for best viewing open in safari, click share button (<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action_2x.png" />), scroll down to "add to homescreen"</p>
-                <p id="android">Mobile: for best viewing "add to homescreen"</p>
+                <p id="android">For best viewing "add to homescreen"</p>
+              </div>
+
+              <div class="wrap">
+                <div class="button">
+                  <p id="beginreading"><a href="#" onclick="startReading()">Begin Reading</a></p>    
+                  <img id="loading" src="images/Loading-GIF-Ebook.gif">
+                </div>
               </div>
             
 
@@ -453,6 +503,7 @@ function changeSlide(num){
   };
   $(".slide" ).fadeOut( "fast", function() {
     $("#intro").hide();
+    $("#sliderwrapper").show();
     $("#slidetext").attr("src", "");
     var textbackground = slides[num].textbackground;
     var textimage = slides[num].textimage;
@@ -556,7 +607,7 @@ ImageLoader(bookimages, function(result){
 
     // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
     console.log("The following images were succesfully loaded: ", result.success);
-    $("#loading").fadeOut();
+    $("#loading").fadeOut("slow");
     $("#beginreading").fadeIn();
     
 });
