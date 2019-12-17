@@ -74,16 +74,26 @@
       display: block;
     }
 
+    #slidetext[src=""] { content:url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="); }
+
 
 
     #intro{
       width:100%;
       height:100vh;
+      position:fixed;
+      top:0px;
+      left:0px;
       background-image:url(images/Cover-Ebook-Layout-No-Title.jpg);
       background-size:cover;
       font-size: 24px;
     line-height: 35px;
     text-align:center;
+    z-index:-1;
+    }
+
+    #introtext{
+
     }
 
     #covertext{
@@ -289,10 +299,9 @@
     <div id="slidescontainer">
 
         <div id="intro">
+        </div>
+        <div id="introtext">
             <img id="covertext" src="images/Cover-Ebook-Layout-TXT.png" />
-
-
-          
           
             <div class="mobilehelptext">
                 <p id="ios">iOS: for best viewing open in safari, click share button (<img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action_2x.png" />), scroll down to "add to homescreen"</p>
@@ -506,6 +515,7 @@ function changeSlide(num){
   };
   $(".slide" ).fadeOut( "fast", function() {
     $("#intro").hide();
+    $("#introtext").hide();
     $("#sliderwrapper").show();
     $("#slidetext").attr("src", "");
     var textbackground = slides[num].textbackground;
