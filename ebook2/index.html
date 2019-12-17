@@ -608,7 +608,7 @@ function changeSlide(num){
     }
 };
 
-var singlegif = ["images/Loading-GIF-Ebook.gif"];
+var primary = ["images/Loading-GIF-Ebook.gif","images/Cover-Ebook-Layout-No-Title.jpg","images/Cover-Ebook-Layout-TXT.png"];
 var bookimages = [];
 
 for (slide in slides){
@@ -624,7 +624,7 @@ for (slide in slides){
     }
 };
 
-ImageLoader(singlegif, function(result){
+ImageLoader(primary, function(result){
   if(result.error){
         // outputs: ["example.png", "example.jpg"]
         console.log("The following images couldn't be properly loaded: ", result.error);
@@ -632,10 +632,7 @@ ImageLoader(singlegif, function(result){
 
     // outputs: ["http://i.imgur.com/fHyEMsl.jpg"]
     console.log("The following images were succesfully loaded: ", result.success);
-    
-});
-
-ImageLoader(bookimages, function(result){
+    ImageLoader(bookimages, function(result){
     if(result.error){
         // outputs: ["example.png", "example.jpg"]
         console.log("The following images couldn't be properly loaded: ", result.error);
@@ -648,7 +645,11 @@ ImageLoader(bookimages, function(result){
     });
     
     
+    });
+    
 });
+
+
 
     </script>
   </body>

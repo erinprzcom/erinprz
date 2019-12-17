@@ -6,7 +6,9 @@ android prompt to add to homescreen
 
 Confirm images loading is a thing
 
-Homescreen splash
+Button fix on ios homescreen
+
+Make second set of images load conditional on first.
 
 Add end credits screen (loop around?)
 
