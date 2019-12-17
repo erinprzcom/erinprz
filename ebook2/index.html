@@ -523,10 +523,32 @@ function changeSlide(num){
     var spread = slides[num].spread;
     if (spread) {
       $("#slidebackground").css("background-image", "url(" + spread + ")");
+
+      if(spread.indexOf("BTM") != -1) {
+        $("#slidebackground").css("background-position", "bottom");
+      }
+      else if(spread.indexOf("TOP") != -1) {
+        $("#slidebackground").css("background-position", "top");
+      }
+      else{
+        $("#slidebackground").css("background-position", "center");
+      };
+
     }
     if (textbackground) {
       $("#slidebackground").css("background-image", "url(" + textbackground + ")");
       $("#slidetext").attr("src", textimage);
+
+      if(textbackground.indexOf("BTM") != -1) {
+        $("#slidebackground").css("background-position", "bottom");
+      }
+      else if(textbackground.indexOf("TOP") != -1) {
+        $("#slidebackground").css("background-position", "top");
+      }
+      else{
+        $("#slidebackground").css("background-position", "center");
+      };
+
     }
     $(".slide" ).fadeIn("fast", function() {
       // loaded

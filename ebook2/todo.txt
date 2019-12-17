@@ -12,8 +12,6 @@ Add end credits screen (loop around?)
 
 Cloudflare?
 
-Fix white box issue (no img src issue?)
-
 Do the top, bottom align in JS
 Fix alignment of cover background image too
 
