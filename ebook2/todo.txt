@@ -6,15 +6,10 @@ android prompt to add to homescreen
 
 Confirm images loading is a thing
 
-Button fix on ios homescreen
-
-Make second set of images load conditional on first.
-
 Add end credits screen (loop around?)
 
 Cloudflare?
 
-Do the top, bottom align in JS
 Fix alignment of cover background image too
 
 DOUBLE CHECK URL in MANIFEST to be ebook vs ebook2!!
