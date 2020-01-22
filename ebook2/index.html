@@ -7,7 +7,7 @@
     <link rel="manifest" href="manifest.json" />
     <meta name="viewport" content="width=device-width user-scalable=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="apple-touch-icon" href="images/Ebook-Homescreen-Icon-Color.png">
+    <link rel="apple-touch-icon" href="images/Rocket-Icon.png">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
     <script
@@ -269,6 +269,10 @@
   flex-direction: column;
 }
 
+#testrotate{
+  display:none;
+}
+
 @keyframes rotate {
   0% {
 		transform: rotate(0deg)
@@ -328,13 +332,7 @@
     <div id="left"></div>
     <div id="right"></div>
 
-    <div class="rotate">
-      <div class="phone">
-      </div>
-      <div class="message">
-        Please rotate your device!
-      </div>
-  </div>
+
 
     <div id="slidescontainer">
 
@@ -359,6 +357,15 @@
         </div>
 
       <div id="sliderwrapper">
+
+          <div class="rotate">
+              <div class="phone">
+              </div>
+              <div class="message">
+                Please rotate your device!
+              </div>
+          </div>
+
         <div class="slide" id="slidebackground">
           <img id="slidetext" />
 
@@ -519,6 +526,11 @@
       slidecount = 0;
       keypress = 1;
       changeSlide(0);
+      if (window.innerHeight > window.innerWidth) {
+        $(".rotate").show();
+      } else {
+        $(".rotate").hide();
+      }
     };
 
     /* View in fullscreen */
@@ -709,6 +721,15 @@ ImageLoader(primary, function(result){
     
     });
     
+});
+
+// From here: https://techstacker.com/javascript-detect-if-screen-width-is-greater-or-less-than/XXjho5wLJdLzFNDpT
+window.addEventListener("resize", function() {
+  if (window.innerHeight > window.innerWidth) {
+    $("#testrotate").show();
+  } else {
+    $("#testrotate").hide();
+}
 });
 
 // from here: https://stackoverflow.com/questions/55335079/google-chrome-add-to-homescreen-force-refresh

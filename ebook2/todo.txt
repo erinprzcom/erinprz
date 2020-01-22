@@ -10,3 +10,6 @@ Page lifecycle javascript? Y/N? Only call on mobile?
 Fix alignment of cover background image too
 
 DOUBLE CHECK URL in MANIFEST to be ebook vs ebook2!!
+
+Fix rotate mess I made (testrotate)
+Fix intro screen for portrait
