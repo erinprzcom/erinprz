@@ -7,7 +7,7 @@
     <link rel="manifest" href="manifest.json" />
     <meta name="viewport" content="width=device-width user-scalable=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="apple-touch-icon" href="images/Rocket-Icon.png">
+    <link rel="apple-touch-icon" href="images/Ebook-Homescreen-Icon-Color.png">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
     <script
@@ -194,6 +194,28 @@
       height:1em;
     }
 
+#endpagebuttons{
+  display:none;
+}
+
+#endpagebuttons .button{
+  margin:20px;
+  margin-top:50%;
+  color:black;
+  text-align:center;
+  line-height:60px;
+}
+
+#endpagebuttons .button p{
+  padding:0px;
+  margin:0px;
+}
+
+#endpagebuttons .button a{
+      text-decoration:none;
+      color:black
+    }
+
 
 
 /* From here: https://stackoverflow.com/questions/30102792/css-media-query-to-target-only-ios-devices */
@@ -339,6 +361,18 @@
       <div id="sliderwrapper">
         <div class="slide" id="slidebackground">
           <img id="slidetext" />
+
+          <div id="endpagebuttons">
+            <div class="wrap">
+              <div class="button">
+                <p><a href="#" onclick="startReading()">Read Again</a></p>    
+              </div>
+              <div class="button">
+                <p><a target="_blank" href="https://www.etsy.com/shop/ErinprzArt"">Buy the book on Etsy</a></p>    
+              </div>              
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -469,12 +503,17 @@
       },
       {
         "spread": "images/The-End-Ebook.jpg"
-      },                                                                              
+      },
+      {
+        "spread": "images/END-PAGE-Thank-you-E-Book-CNTR-84-gif.gif",
+        "endpage": true
+      },                                                                                    
     ]
     };
 
     function startReading(){
       openFullscreen();
+      $("#endpagebuttons").hide();
       $("#left").show();
       $("#right").show();
       slidecount = 0;
@@ -527,7 +566,7 @@
 
 
 function changeSlide(num){
-  if(num==-1 || num==33){
+  if(num==-1 || num==34){
     num=0;
     slidecount = 0;
   };
@@ -568,6 +607,12 @@ function changeSlide(num){
       };
 
     }
+    if (slides[num].endpage == true){
+      $("#endpagebuttons").show();
+      $("#left").hide();
+      $("#right").hide();
+      keypress = 0;
+    };
     $(".slide" ).fadeIn("fast", function() {
       // loaded
     });
@@ -666,7 +711,19 @@ ImageLoader(primary, function(result){
     
 });
 
-
+// from here: https://stackoverflow.com/questions/55335079/google-chrome-add-to-homescreen-force-refresh
+// too aggressive :( but it does do what I need for mobile... maybe only enable this for ios?
+/*
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    $("#intro").show();
+    $("#introtext").show();
+    $("#sliderwrapper").hide();
+    var slidecount = -1;
+    var keypress = 0;
+  }
+});
+*/
 
     </script>
   </body>

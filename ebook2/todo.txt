@@ -1,14 +1,11 @@
 Update meta info OG tags
 Add analytics
 
-ios prompt to add to homescreen
-android prompt to add to homescreen
-
-Confirm images loading is a thing
-
 Add end credits screen (loop around?)
 
 Cloudflare?
+
+Page lifecycle javascript? Y/N? Only call on mobile?
 
 Fix alignment of cover background image too
 
