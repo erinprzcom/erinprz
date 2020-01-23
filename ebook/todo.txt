@@ -1,6 +1,1 @@
-Update meta info OG tags
-Add analytics
-
 Cloudflare?
-
-DOUBLE CHECK URL in MANIFEST to be ebook vs ebook2!!
