@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width user-scalable=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="apple-touch-icon" href="images/Rocket-Icon.png">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto" rel="stylesheet">
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -35,7 +35,8 @@
     body {
       margin: 0px;
       padding: 0px;
-      font-family:"Playfair Display"
+      font-family:"Playfair Display";
+      background-color:black;
     }
 
     #slidescontainer {
@@ -148,6 +149,11 @@
 
   color: #fff;
   transform: translateY(-7px);
+}
+
+.button a{
+  text-decoration:none;
+      color:black
 }
 
     #beginreading{
@@ -354,7 +360,7 @@
 
               <div class="wrap">
                 <div class="button">
-                  <p id="beginreading"><a href="#" onclick="startReading()">Begin Reading</a></p>    
+                    <a href="#" onclick="startReading()"><p id="beginreading">Begin Reading</p></a>
                   <img id="loading" src="images/Loading-GIF-Ebook.gif">
                 </div>
               </div>
@@ -378,10 +384,10 @@
           <div id="endpagebuttons">
             <div class="wrap">
               <div class="button">
-                <p><a href="#" onclick="startReading()">Read Again</a></p>    
+                <a href="#" onclick="startReading()"><p>Read Again</p></a>    
               </div>
               <div class="button">
-                <p><a target="_blank" href="https://www.etsy.com/shop/ErinprzArt"">Buy the book on Etsy</a></p>    
+                <a target="_blank" href="https://www.etsy.com/shop/ErinprzArt""><p>Buy the book on Etsy</p></a>
               </div>              
             </div>
           </div>
