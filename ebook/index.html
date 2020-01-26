@@ -408,7 +408,7 @@ padding-top:100px;
           <div id="endpagebuttons">
             <div class="wrap">
               <div class="button">
-                <a href="#" onclick="startReading()"><p>Read Again</p></a>    
+                <a href="#" onclick="readAgain()"><p>Read Again</p></a>    
               </div>
               <div class="button">
                 <a target="_blank" href="https://www.etsy.com/shop/ErinprzArt""><p>Buy the book on Etsy</p></a>
@@ -553,6 +553,15 @@ padding-top:100px;
       },                                                                                    
     ]
     };
+
+    function readAgain(){
+      $("#endpagebuttons").hide();
+      slidecount = 0;
+      keypress = 0;
+      $("#intro").show();
+      $("#introtext").show();
+      $("#sliderwrapper").hide();
+    }
 
     function startReading(){
       openFullscreen();
