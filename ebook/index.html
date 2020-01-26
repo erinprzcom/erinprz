@@ -626,6 +626,7 @@ function changeSlide(num){
     if (spread) {
       $("#slidebackground").css("background-image", "url(" + spread + ")");
 
+      /*
       if(spread.indexOf("BTM") != -1) {
         $("#slidebackground").css("background-position", "bottom");
       }
@@ -634,13 +635,14 @@ function changeSlide(num){
       }
       else{
         $("#slidebackground").css("background-position", "center");
-      };
+      }; */
 
     }
     if (textbackground) {
       $("#slidebackground").css("background-image", "url(" + textbackground + ")");
       $("#slidetext").attr("src", textimage);
 
+      /*
       if(textbackground.indexOf("BTM") != -1) {
         $("#slidebackground").css("background-position", "bottom");
       }
@@ -649,7 +651,7 @@ function changeSlide(num){
       }
       else{
         $("#slidebackground").css("background-position", "center");
-      };
+      }; */
 
     }
     if (slides[num].endpage == true){
