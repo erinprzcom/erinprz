@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Journey to the End of the Night
 ---
 
 <div class="not-prose max-w-5xl mx-auto my-12">

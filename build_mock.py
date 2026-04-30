@@ -21,7 +21,7 @@ index_html = f"""
       Hi, I'm Erin
     </h1>
     <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-      I'm an artist and the founder of <a href="http://www.fiercelycurious.com" target="_blank" class="text-brand font-bold hover:underline">Fiercely Curious</a>. I'm an author of <a href="/book" class="text-brand font-bold hover:underline">Journey to the End of the Night</a> and mom to two kids. I live and play in Brooklyn.
+      I'm an artist and the founder of <a href="http://www.fiercelycurious.com" target="_blank" class="text-brand font-bold hover:underline">Fiercely Curious</a>. I wrote and illustrated <a href="/book" class="text-brand font-bold hover:underline">Journey to the End of the Night</a>. I live and play in Brooklyn.
     </p>
     <div class="flex justify-center space-x-6">
       <a href="mailto:erinprz@gmail.com" class="text-brand hover:text-white hover:bg-brand transition-colors duration-300 border-2 border-brand rounded-full p-3 flex items-center justify-center">
@@ -32,12 +32,12 @@ index_html = f"""
       </a>
     </div>
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
 """
 for img in images:
     index_html += f"""
-        <a href="/images/latest_work/{img}" class="glightbox group relative overflow-hidden rounded-lg shadow-lg aspect-[4/5] bg-gray-100 block" data-gallery="portfolio">
-          <img src="/images/latest_work/{img}" alt="Artwork" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        <a href="/images/latest_work/{img}" class="glightbox group relative overflow-hidden bg-gray-100 block break-inside-avoid" data-gallery="portfolio">
+          <img src="/images/latest_work/{img}" alt="Artwork" class="w-full h-auto block transition-transform duration-500 group-hover:scale-105" loading="lazy" />
           <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
         </a>
     """
