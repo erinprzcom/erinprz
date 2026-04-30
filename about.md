@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Here's my story...
+title: A little about me...
 ---
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16 mt-8">
