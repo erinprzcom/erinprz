@@ -1,14 +1,14 @@
 {% include head.html %}
+{% include header.html %}
 
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <article class="prose prose-lg lg:prose-xl mx-auto">
+    <h1 class="text-4xl font-heading font-bold text-gray-900 mb-8">{{ page.title }}</h1>
+    {{ content }}
+  </article>
+</main>
 
-    {% include pageheader.html %}
-
-<h1>{{page.title}}</h1>
-
-{{page.content}}
-
-    {% include footer.html %}
-
-
-
+{% include footer.html %}
 {% include googleanalytics.html %}
+</body>
+</html>
