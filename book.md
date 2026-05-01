@@ -12,11 +12,11 @@ layout: page
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 px-4 items-start">
     <img src="/images/il_1588xN.2050156618_89m1.webp" alt="Journey to the End of the Night Preview 1" class="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-auto" loading="lazy" />
-    <img src="/images/il_1588xN.2050156774_xc1z.webp" alt="Journey to the End of the Night Preview 2" class="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-auto" loading="lazy" />
     <img src="/images/il_1588xN.2050156798_ndoj.webp" alt="Journey to the End of the Night Preview 3" class="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-auto" loading="lazy" />
     <img src="/images/il_1588xN.2097751653_79ks.webp" alt="Journey to the End of the Night Preview 4" class="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-auto" loading="lazy" />
     <img src="/images/il_1588xN.2097752387_3a7l.webp" alt="Journey to the End of the Night Preview 5" class="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-auto" loading="lazy" />
     <img src="/images/il_1588xN.2097752419_l3c2.webp" alt="Journey to the End of the Night Preview 6" class="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-auto" loading="lazy" />
+    <img src="/images/il_1588xN.2050156774_xc1z.webp" alt="Journey to the End of the Night Preview 2" class="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-auto" loading="lazy" />
   </div>
 
   <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 mb-16 px-4">
