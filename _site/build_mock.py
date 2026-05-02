@@ -38,8 +38,7 @@ for img in images:
     index_html += f"""
         <a href="/images/latest_work/{img}" class="glightbox group relative overflow-hidden bg-gray-100 block break-inside-avoid" data-gallery="portfolio">
           <img src="/images/latest_work/{img}" alt="Artwork" class="w-full h-auto block transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
-        </a>
+                  </a>
     """
 index_html += """
   </div>
